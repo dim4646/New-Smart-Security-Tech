@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="One team. From cable to camera. Professional security systems for residential, commercial, and high-rise environments across Australia.">
+<meta property="og:title" content="Smart Security & Technology Solutions">
+<meta property="og:description" content="CCTV, access control, intercoms, alarms and structured cabling across Australia.">
+<meta property="og:type" content="website">
+<title>Smart Security & Technology Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0d0f14;--dark2:#10131a;--card:#15181f;--card2:#1a1e28;
+  --accent:#3b82f6;--accent2:#60a5fa;--accent-dim:rgba(59,130,246,0.12);
+  --text:#e2e8f0;--muted:#94a3b8;--border:#1e2434;--border2:rgba(59,130,246,0.25);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,15,20,0.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;white-space:nowrap}
+.logo span{color:var(--accent)}
+.nav-links{list-style:none;display:flex;gap:28px}
+.nav-links a{color:var(--muted);font-size:0.875rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:inline-flex;align-items:center;background:var(--accent);color:#fff;padding:9px 20px;border-radius:7px;font-size:0.875rem;font-weight:600;transition:background .2s,transform .15s}
+.nav-cta:hover{background:#2563eb;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;flex-direction:column;background:var(--dark2);border-bottom:1px solid var(--border);padding:16px 24px 20px}
+.mobile-nav a{color:var(--muted);font-size:1rem;padding:10px 0;border-bottom:1px solid var(--border);display:block}
+.mobile-nav a:last-child{border:none}
+.mobile-nav .nav-cta{margin-top:12px;text-align:center;justify-content:center}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;background:radial-gradient(ellipse 90% 55% at 50% -5%,rgba(59,130,246,0.13) 0%,transparent 65%)}
+.hero-content{max-width:740px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-dim);border:1px solid var(--border2);color:var(--accent2);font-size:0.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:28px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Outfit',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.13;margin-bottom:22px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:1.05rem;max-width:500px;margin:0 auto 36px;line-height:1.75}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:0.925rem;transition:background .2s,transform .15s,box-shadow .2s;box-shadow:0 4px 20px rgba(59,130,246,0.28)}
+.btn:hover{background:#2563eb;transform:translateY(-2px);box-shadow:0 8px 28px rgba(59,130,246,0.38)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text);box-shadow:none}
+.btn-ghost:hover{background:var(--card);box-shadow:none}
+.trust-row{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:56px;padding-top:40px;border-top:1px solid var(--border)}
+.trust-stat .num{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:700;color:var(--text)}
+.trust-stat .lbl{font-size:0.78rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.trust-divider{width:1px;height:36px;background:var(--border)}
+
+/* ── SECTIONS ── */
+section{padding:80px 24px}
+.wrap{max-width:1140px;margin:0 auto}
+.sec-tag{font-size:0.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h2{font-family:'Outfit',sans-serif;font-size:clamp(1.7rem,3vw,2.3rem);font-weight:700;line-height:1.2;margin-bottom:14px}
+.sec-sub{color:var(--muted);max-width:520px;font-size:0.975rem;line-height:1.75;margin-bottom:44px}
+.alt{background:var(--dark2)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:0.975rem;line-height:1.8}
+.about-visual{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:16px}
+.av-row{display:flex;align-items:center;gap:14px;padding:14px;background:var(--card2);border-radius:10px;border:1px solid var(--border)}
+.av-icon{width:38px;height:38px;min-width:38px;border-radius:8px;background:var(--accent-dim);display:flex;align-items:center;justify-content:center}
+.av-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.av-label{font-size:0.875rem;font-weight:500;color:var(--text)}
+.av-val{font-size:0.78rem;color:var(--muted)}
+
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.svc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .2s}
+.svc:hover{border-color:var(--border2);transform:translateY(-3px)}
+.svc:hover::before{opacity:1}
+.svc-icon{width:42px;height:42px;background:var(--accent-dim);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.svc-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;margin-bottom:8px}
+.svc p{color:var(--muted);font-size:0.875rem;line-height:1.75}
+
+/* ── MID CTA ── */
+.mid-cta{background:linear-gradient(135deg,rgba(59,130,246,0.1) 0%,rgba(59,130,246,0.03) 100%);border:1px solid var(--border2);border-radius:16px;padding:48px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-top:48px}
+.mid-cta h3{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.mid-cta p{color:var(--muted);font-size:0.95rem;max-width:440px}
+
+/* ── APPROACH ── */
+.approach-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.approach-grid::before{content:'';position:absolute;top:27px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--border2) 20%,var(--border2) 80%,transparent)}
+.step{text-align:center;padding:0 12px;position:relative}
+.step-num{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--accent);background:var(--dark);color:var(--accent);font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative;z-index:1}
+.step h4{font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:6px}
+.step p{color:var(--muted);font-size:0.8rem;line-height:1.6}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.testi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px}
+.stars{display:flex;gap:3px;margin-bottom:16px}
+.star{width:14px;height:14px;background:var(--accent);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.testi blockquote{color:var(--muted);font-size:0.9rem;line-height:1.75;font-style:italic;margin-bottom:20px;border:none;padding:0}
+.testi-author{display:flex;align-items:center;gap:12px}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--accent-dim);border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:var(--accent)}
+.author-name{font-size:0.875rem;font-weight:600}
+.author-role{font-size:0.78rem;color:var(--muted)}
+
+/* ── INDUSTRIES ── */
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.ind{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:12px;font-size:0.9rem;color:var(--muted);transition:border-color .2s}
+.ind:hover{border-color:var(--border2);color:var(--text)}
+.ind-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);min-width:7px}
+
+/* ── CONTACT ── */
+#contact{background:var(--dark2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.contact-info h2{margin-bottom:12px}
+.contact-info p{color:var(--muted);margin-bottom:28px;font-size:0.975rem;line-height:1.8}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:var(--muted);font-size:0.9rem}
+.contact-detail svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;min-width:16px}
+.contact-hours{margin-top:28px;padding:20px;background:var(--card);border-radius:10px;border:1px solid var(--border)}
+.contact-hours h4{font-size:0.85rem;font-weight:600;margin-bottom:10px;color:var(--text)}
+.contact-hours p{font-size:0.82rem;color:var(--muted);margin-bottom:4px}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:0.8rem;font-weight:600;color:var(--muted);margin-bottom:6px;letter-spacing:.03em;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;background:var(--dark);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:11px 14px;font-size:0.9rem;font-family:'Inter',sans-serif;transition:border-color .2s;outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+.field select{cursor:pointer}
+.field select option{background:var(--dark2)}
+.field textarea{resize:vertical;min-height:110px}
+.form-submit{width:100%;background:var(--accent);color:#fff;border:none;border-radius:8px;padding:14px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s,transform .15s;box-shadow:0 4px 20px rgba(59,130,246,0.25)}
+.form-submit:hover{background:#2563eb;transform:translateY(-1px)}
+.form-success{display:none;text-align:center;padding:32px 0;color:var(--accent)}
+.form-success svg{width:48px;height:48px;stroke:var(--accent);fill:none;stroke-width:1.5;margin:0 auto 12px}
+.form-success p{color:var(--muted);font-size:0.9rem;margin-top:6px}
+
+/* ── FOOTER ── */
+footer{background:#090b10;border-top:1px solid var(--border);padding:32px 24px;text-align:center}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{color:var(--muted);font-size:0.825rem;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.copyright{color:#3a4455;font-size:0.78rem}
+
+/* ── FADE IN ── */
+.fade{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.fade.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-visual{display:none}
+  .approach-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .approach-grid::before{display:none}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:680px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .trust-row{gap:20px}
+  .form-row{grid-template-columns:1fr}
+  .mid-cta{padding:32px 24px}
+  .approach-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#" class="logo">Smart Security <span>& Tech</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <button class="hamburger" id="ham" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mob-nav">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#services" class="mob-link">Services</a>
+    <a href="#approach" class="mob-link">Approach</a>
+    <a href="#testimonials" class="mob-link">Reviews</a>
+    <a href="#contact" class="nav-cta mob-link">Get a Quote</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content fade">
+    <div class="badge"><span class="badge-dot"></span>Australia-Wide Security Solutions</div>
+    <h1>One team.<br><em>From cable to camera.</em></h1>
+    <p class="hero-sub">No subcontractors. No hand-offs. End-to-end security and communications for residential, commercial, and high-rise projects across Australia.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn">Get a Free Quote</a>
+      <a href="#services" class="btn btn-ghost">Our Services</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-stat"><div class="num">500+</div><div class="lbl">Projects</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat"><div class="num">10+</div><div class="lbl">Years Experience</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat"><div class="num">100%</div><div class="lbl">In-House Team</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat"><div class="num">5★</div><div class="lbl">Client Rated</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="sec-tag">Who We Are</div>
+        <h2>Built on expertise,<br>driven by results</h2>
+        <div style="margin-bottom:44px"></div>
+        <p>We are a technology and security solutions company specialising in modern security systems, structured cabling, and communications infrastructure. Unlike generalist contractors, every job is handled end-to-end by our own trained team — no subcontracting, no quality surprises.</p>
+        <p>With hands-on experience across residential buildings, commercial offices, and complex multi-level high-rise projects, we work closely with clients, builders, and property managers to deliver practical, efficient outcomes that last.</p>
+        <p>Our approach is simple: understand the environment, design the right solution, install it correctly, and support it long-term.</p>
+        <a href="#contact" class="btn" style="margin-top:12px">Discuss Your Project</a>
+      </div>
+      <div class="about-visual fade">
+        <div class="av-row">
+          <div class="av-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="av-label">Fully In-House Team</div><div class="av-val">No subcontractors — ever</div></div>
+        </div>
+        <div class="av-row">
+          <div class="av-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div>
+          <div><div class="av-label">Remote Access Ready</div><div class="av-val">All systems configured for remote monitoring</div></div>
+        </div>
+        <div class="av-row">
+          <div class="av-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div><div class="av-label">Scalable by Design</div><div class="av-val">Systems built to grow with your property</div></div>
+        </div>
+        <div class="av-row">
+          <div class="av-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.16 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.8 5.8l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="av-label">Ongoing Support</div><div class="av-val">We're available after installation too</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-tag fade">What We Do</div>
+    <h2 class="fade">Our Services</h2>
+    <p class="sec-sub fade">From a single camera to a full building fit-out — we design, install, and maintain complete security and communications solutions.</p>
+    <div class="svc-grid">
+      <div class="svc fade">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div>
+        <h3>CCTV & Video Surveillance</h3>
+        <p>Professional systems designed for visibility, reliability, and remote access. Includes camera placement, network integration, recording configuration, and ongoing optimisation.</p>
+      </div>
+      <div class="svc fade">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Access Control Systems</h3>
+        <p>Secure, flexible access solutions for apartments, offices, and commercial buildings. Standalone doors to fully integrated multi-site systems — without compromising day-to-day usability.</p>
+      </div>
+      <div class="svc fade">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.16 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.8 5.8l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Intercom & Communication</h3>
+        <p>Audio and video intercoms for residential and commercial applications, integrated with access control and networking for seamless building communication.</p>
+      </div>
+      <div class="svc fade">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Alarm & Security Systems</h3>
+        <p>Reliable alarm solutions tailored to the specific risk and operational needs of each site. Monitored or unmonitored — we configure what's right for your environment.</p>
+      </div>
+      <div class="svc fade">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+        <h3>Structured Cabling</h3>
+        <p>Professional data cabling and network infrastructure designed and installed to support your security, communications, and future technology expansion requirements.</p>
+      </div>
+    </div>
+
+    <!-- MID-PAGE CTA -->
+    <div class="mid-cta fade">
+      <div>
+        <h3>Not sure what you need?</h3>
+        <p>We'll assess your site and recommend the right solution — with no obligation and no sales pressure.</p>
+      </div>
+      <a href="#contact" class="btn" style="white-space:nowrap">Book a Free Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach" class="alt">
+  <div class="wrap">
+    <div class="sec-tag fade">How We Work</div>
+    <h2 class="fade">Our Approach</h2>
+    <p class="sec-sub fade">A clear five-step process that keeps you informed and delivers consistent results on every project, large or small.</p>
+    <div class="approach-grid fade">
+      <div class="step"><div class="step-num">1</div><h4>Consult & Assess</h4><p>We visit the site, understand the requirements, and define clear objectives with you</p></div>
+      <div class="step"><div class="step-num">2</div><h4>Design</h4><p>We plan a solution that fits the environment today and scales for the future</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Install</h4><p>Professional, tidy installation with minimal disruption to your operations</p></div>
+      <div class="step"><div class="step-num">4</div><h4>Configure & Test</h4><p>Every system is fully tested, optimised, and handed over with clear documentation</p></div>
+      <div class="step"><div class="step-num">5</div><h4>Support</h4><p>We remain available after installation — for maintenance, upgrades, or advice</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-tag fade">Client Reviews</div>
+    <h2 class="fade">What Our Clients Say</h2>
+    <p class="sec-sub fade">We let the work — and our clients — speak for themselves.</p>
+    <div class="testi-grid">
+      <div class="testi fade">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <blockquote>"They handled our entire 18-floor residential tower — cabling, intercoms, access control, and CCTV. One team, start to finish. The quality of the installation was exceptional and they were on time throughout."</blockquote>
+        <div class="testi-author"><div class="avatar">MK</div><div><div class="author-name">Michael K.</div><div class="author-role">Property Developer, Melbourne</div></div></div>
+      </div>
+      <div class="testi fade">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <blockquote>"We've used other security companies before and always ended up with subcontractors who didn't know the full system. Smart Security are different — their team knows every part of what they install."</blockquote>
+        <div class="testi-author"><div class="avatar">SL</div><div><div class="author-name">Sarah L.</div><div class="author-role">Facilities Manager, Sydney</div></div></div>
+      </div>
+      <div class="testi fade">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <blockquote>"Professional from first contact to final handover. The documentation they provided and the remote access setup was above and beyond what we expected. Would recommend without hesitation."</blockquote>
+        <div class="testi-author"><div class="avatar">JP</div><div><div class="author-name">James P.</div><div class="author-role">Building Manager, Brisbane</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-tag fade">Who We Serve</div>
+    <h2 class="fade">Industries</h2>
+    <div class="ind-grid fade">
+      <div class="ind"><div class="ind-dot"></div>Residential apartment buildings</div>
+      <div class="ind"><div class="ind-dot"></div>High-rise & multi-level developments</div>
+      <div class="ind"><div class="ind-dot"></div>Commercial offices</div>
+      <div class="ind"><div class="ind-dot"></div>Retail & mixed-use developments</div>
+      <div class="ind"><div class="ind-dot"></div>Property management & facilities</div>
+      <div class="ind"><div class="ind-dot"></div>Construction & new developments</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="fade">
+        <div class="sec-tag">Get in Touch</div>
+        <h2>Let's talk about your project</h2>
+        <p>Whether you're planning a new build, upgrading an existing system, or just exploring your options — we're happy to discuss your project and provide honest, practical advice.</p>
+        <div class="contact-detail"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.16 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.8 5.8l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+61 (0)4XX XXX XXX</div>
+        <div class="contact-detail"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@smartsecurity.com.au</div>
+        <div class="contact-detail"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Servicing all states across Australia</div>
+        <div class="contact-hours">
+          <h4>Response Times</h4>
+          <p>Phone enquiries — same business day</p>
+          <p>Email & form enquiries — within 24 hours</p>
+          <p>Site assessments — typically within 5 business days</p>
+        </div>
+      </div>
+      <div class="fade">
+        <div class="form-card">
+          <div id="form-wrap">
+            <div class="form-row">
+              <div class="field"><label>First Name</label><input type="text" placeholder="John"></div>
+              <div class="field"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+            </div>
+            <div class="field"><label>Email</label><input type="email" placeholder="john@company.com.au"></div>
+            <div class="field"><label>Phone</label><input type="tel" placeholder="+61 4XX XXX XXX"></div>
+            <div class="field">
+              <label>Project Type</label>
+              <select>
+                <option value="" disabled selected>Select a service...</option>
+                <option>CCTV & Video Surveillance</option>
+                <option>Access Control Systems</option>
+                <option>Intercom & Communication</option>
+                <option>Alarm & Security Systems</option>
+                <option>Structured Cabling</option>
+                <option>Full Building Fit-Out</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field"><label>Tell us about your project</label><textarea placeholder="Site type, number of floors, approximate scope, timeline..."></textarea></div>
+            <button class="form-submit" id="submit-btn">Send Enquiry</button>
+          </div>
+          <div class="form-success" id="form-success">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><polyline points="16,24 22,30 32,18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <strong style="font-size:1.05rem">Enquiry sent!</strong>
+            <p>Thanks for reaching out. We'll be in touch within one business day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Security <span>&</span> Tech</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="copyright">&copy; 2025 Smart Security & Technology Solutions. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const ham = document.getElementById('ham');
+const mob = document.getElementById('mob-nav');
+ham.addEventListener('click', () => {
+  const open = mob.style.display === 'flex';
+  mob.style.display = open ? 'none' : 'flex';
+  ham.classList.toggle('open', !open);
+});
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mob.style.display = 'none';
+  ham.classList.remove('open');
+}));
+
+const obs = new IntersectionObserver(els => els.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08 });
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+document.getElementById('submit-btn').addEventListener('click', () => {
+  document.getElementById('form-wrap').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+});
+</script>
+</body>
+</html>
