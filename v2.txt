@@ -1,0 +1,14 @@
+🎞️ Hero Slider (4 φωτογραφίες):
+ΑρχείοΠεριεχόμενοslide-
+1.jpgCCTV — κάμερες, NVR, εγκατάστασηslide-
+2.jpgAccess Control — card reader, πόρταslide-
+3.jpgNetworking — rack, switches, καλώδιαslide-
+4.jpgIntegration — πλήρες σύστημα
+🖼️ Gallery (6 φωτογραφίες):
+ΑρχείοΤίτλοςgallery-
+1.jpgCommercial Building — 16-Camera IP Systemgallery-
+2.jpgApartment Complex — Multi-Door Accessgallery-
+3.jpgOffice — MikroTik VLAN Segmentationgallery-
+4.jpgRetail — Hikvision System Upgradegallery-
+5.jpgResidential — IP Door Stationgallery-
+6.jpgUbiquiti UniFi — Multi-Site Deployment
