@@ -1,16 +1,17 @@
-🎞️ Hero Slider (4 φωτογραφίες):
-ΑρχείοΠεριεχόμενοslide-
-1.jpgCCTV — κάμερες, NVR, εγκατάστασηslide-
-2.jpgAccess Control — card reader, πόρταslide-
-3.jpgNetworking — rack, switches, καλώδιαslide-
-4.jpgIntegration — πλήρες σύστημα
-🖼️ Gallery (6 φωτογραφίες):
-ΑρχείοΤίτλοςgallery-
-1.jpgCommercial Building — 16-Camera IP Systemgallery-
-2.jpgApartment Complex — Multi-Door Accessgallery-
-3.jpgOffice — MikroTik VLAN Segmentationgallery-
-4.jpgRetail — Hikvision System Upgradegallery-
-5.jpgResidential — IP Door Stationgallery-
-6.jpgUbiquiti UniFi — Multi-Site Deployment
+🎞️ Hero Slider — 4 φωτογραφίες
+ΑρχείοΘέμα
+slide-1.jpgCCTV εγκατάσταση — κάμερες, NVR
+slide-2.jpgAccess Control — card reader, πόρτα
+slide-3.jpgNetworking — rack, switches, patch panel
+slide-4.jpgΟλοκληρωμένο σύστημα
+
+🖼️ Project Gallery — 8 φωτογραφίες
+ΑρχείοΚατηγορίαΠεριγραφή
+gallery-1.jpgCCTVCommercial Building — IP Camera System
+gallery-2.jpgAccess ControlApartment Complex — Access Control
+gallery-3.jpgNetworkingOffice — Network Infrastructure
+gallery-4.jpgCCTVRetail — CCTV System Upgrade
+gallery-5.jpgIntercomResidential — IP Intercom & Door Entry
+gallery-6.jpgNetworkingUbiquiti UniFi — Network Deployment
 gallery-7.jpgWirelessGate & Boom Gate — Wireless Control
 gallery-8.jpgCloudUniFi Cloud — Remote Management
