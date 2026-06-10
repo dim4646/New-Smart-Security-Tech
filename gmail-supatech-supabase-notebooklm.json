@@ -1,0 +1,117 @@
+{
+  "name": "Gmail Supatech → Supabase → NotebookLM",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": { "item": [{ "mode": "everyMinute" }] },
+        "filters": { "labelIds": ["Label_14"] },
+        "options": {}
+      },
+      "id": "node-001",
+      "name": "Gmail - Νέο email στο Supatech",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1,
+      "position": [240, 320],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_WITH_YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const email = $input.item.json;\n\nconst fromRaw = email.from || '';\nconst fromEmailMatch = fromRaw.match(/<([^>]+)>/);\nconst fromEmail = fromEmailMatch ? fromEmailMatch[1] : fromRaw.trim();\nconst fromName = fromRaw.replace(/<[^>]+>/, '').replace(/\\\"/g, '').trim();\n\nconst toEmails = Array.isArray(email.to)\n  ? email.to.map(t => t.email || t)\n  : (email.to ? [email.to] : []);\n\nconst ccEmails = Array.isArray(email.cc)\n  ? email.cc.map(c => c.email || c)\n  : (email.cc ? [email.cc] : []);\n\nconst subject = email.subject || '(Χωρίς θέμα)';\nconst bodyText = email.text || email.snippet || '(Χωρίς περιεχόμενο)';\n\nconst separator = '='.repeat(60);\nconst emailContent = `\\n${separator}\\nΘΕΜΑ: ${subject}\\nΑΠΟ: ${fromName} <${fromEmail}>\\nΠΡΟΣ: ${toEmails.join(', ')}\\nCC: ${ccEmails.join(', ')}\\nΗΜΕΡΟΜΗΝΙΑ: ${email.date || ''}\\n${separator}\\n\\n${bodyText}\\n`;\n\nreturn [{\n  json: {\n    message_id: email.id,\n    thread_id: email.threadId,\n    date: email.date,\n    from_email: fromEmail,\n    from_name: fromName,\n    to_emails: toEmails,\n    cc_emails: ccEmails,\n    subject: subject,\n    body_text: email.text || '',\n    body_html: email.html || '',\n    labels: email.labelIds || [],\n    emailContent: emailContent\n  }\n}];"
+      },
+      "id": "node-002",
+      "name": "Επεξεργασία δεδομένων email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 320]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "tableId": "emails",
+        "dataToSend": "defineBelow",
+        "columnsUi": {
+          "columnValues": [
+            { "column": "message_id", "value": "={{ $json.message_id }}" },
+            { "column": "thread_id", "value": "={{ $json.thread_id }}" },
+            { "column": "date", "value": "={{ $json.date }}" },
+            { "column": "from_email", "value": "={{ $json.from_email }}" },
+            { "column": "from_name", "value": "={{ $json.from_name }}" },
+            { "column": "to_emails", "value": "={{ $json.to_emails }}" },
+            { "column": "cc_emails", "value": "={{ $json.cc_emails }}" },
+            { "column": "subject", "value": "={{ $json.subject }}" },
+            { "column": "body_text", "value": "={{ $json.body_text }}" },
+            { "column": "body_html", "value": "={{ $json.body_html }}" },
+            { "column": "labels", "value": "={{ $json.labels }}" }
+          ]
+        },
+        "filterType": "manual",
+        "matchingColumns": ["message_id"],
+        "options": {}
+      },
+      "id": "node-003",
+      "name": "Supabase - Αποθήκευση email",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [680, 320],
+      "credentials": {
+        "supabaseApi": {
+          "id": "REPLACE_WITH_YOUR_SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "1ePFvCIAK4GqagEZpgolVGduIrWI0eTwzu0P5qZkM2jM",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $('Επεξεργασία δεδομένων email').item.json.emailContent }}",
+              "locationUi": {
+                "locationFields": {
+                  "location": "endOfSegmentLocation",
+                  "segmentId": ""
+                }
+              }
+            }
+          ]
+        }
+      },
+      "id": "node-004",
+      "name": "Google Docs - Append στο Supatech Emails",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [900, 320],
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "REPLACE_WITH_YOUR_GOOGLE_DOCS_CREDENTIAL_ID",
+          "name": "Google Docs account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Gmail - Νέο email στο Supatech": {
+      "main": [[{ "node": "Επεξεργασία δεδομένων email", "type": "main", "index": 0 }]]
+    },
+    "Επεξεργασία δεδομένων email": {
+      "main": [[{ "node": "Supabase - Αποθήκευση email", "type": "main", "index": 0 }]]
+    },
+    "Supabase - Αποθήκευση email": {
+      "main": [[{ "node": "Google Docs - Append στο Supatech Emails", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "tags": [],
+  "meta": {
+    "notes": "Flow: Gmail (Label_14 'Supatech') → Supabase 'emails' table → Google Docs append to 'Supatech Emails' → NotebookLM"
+  }
+}
